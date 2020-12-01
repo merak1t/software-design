@@ -1,5 +1,6 @@
 import tokenizer.token.Token
 import tokenizer.Tokenizer
+import visitor.CalcRPNVisitor
 import visitor.RPNVisitor
 import visitor.PrintTokensVisitor
 import java.nio.file.Files
@@ -14,15 +15,15 @@ fun main(args: Array<String>) {
             val time1 = { System.currentTimeMillis().toDouble() }
             val st1 = time1()
             val deltaTime1 = { (time1() - st1) / 1000.0 }
-            val input = fin.readLine()
-            if (input == null || input.isEmpty()) {
-                break
-            }
+            val input = fin.readLine() ?: break
             val tokens: List<Token> = Tokenizer.parse(input)
-            println("input: " + PrintTokensVisitor.print(tokens))
             val RPNTokens = RPNVisitor.toRPN(tokens)
-            println("RPN  : " + PrintTokensVisitor.print(RPNTokens))
-            println("time : ${deltaTime1()}")
+            println("input  : $input")
+            println("tokens : " + PrintTokensVisitor.print(tokens))
+            println("RPN    : " + PrintTokensVisitor.print(RPNTokens))
+            println("answer : " + CalcRPNVisitor.calculate(RPNTokens))
+            println("time   : ${deltaTime1()}")
+            println()
         }
     }
 }

@@ -16,4 +16,8 @@ class NumberToken(private val num: Long) : Token {
     override fun toString(): String {
         return "NUMBER($num)"
     }
+
+    fun getInt() : Long {
+        return num
+    }
 }
