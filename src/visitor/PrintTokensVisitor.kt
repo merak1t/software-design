@@ -6,7 +6,7 @@ import tokenizer.token.OperationToken
 import tokenizer.token.Token
 import java.lang.StringBuilder
 
-class PrintVisitor : TokenVisitor {
+class PrintTokensVisitor : TokenVisitor {
     private val stringBuilder = StringBuilder()
 
     fun walk(tokens: List<Token>): String {
@@ -30,4 +30,9 @@ class PrintVisitor : TokenVisitor {
         stringBuilder.append(token.toString()).append(' ')
     }
 
+    companion object {
+        fun print(tokens: List<Token>): String {
+            return PrintTokensVisitor().walk(tokens)
+        }
+    }
 }
