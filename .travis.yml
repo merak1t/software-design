@@ -1,9 +1,14 @@
 language: java
 
 jdk:
-  - openjdk8
+  - oraclejdk8
 
-sudo: false # faster builds
+sudo: false
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
 
-script:
-  - ./clock/mvnw test -B
+
+
+script: mvn clean verify
