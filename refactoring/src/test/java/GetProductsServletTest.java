@@ -50,7 +50,7 @@ public class GetProductsServletTest {
     }
 
     @Test
-    public void testGetProductServlet() {
+    public void getProductServletTest() {
 
         servlet.doGet(servletRequest, servletResponse);
 

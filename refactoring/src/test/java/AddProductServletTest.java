@@ -52,7 +52,7 @@ public class AddProductServletTest {
 
 
     @Test
-    public void testAddProductServlet() throws SQLException {
+    public void addProductServletTest() throws SQLException {
 
         servlet.doGet(servletRequest, servletResponse);
 

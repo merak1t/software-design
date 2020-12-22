@@ -44,7 +44,7 @@ public class QueryServletTest {
     }
 
     @Test
-    public void testMax() throws SQLException {
+    public void findMaxPriceTest() throws SQLException {
         when(servletRequest.getParameter("command"))
                 .thenReturn("max");
         when(productDao.findMaxPriceProduct())
@@ -62,7 +62,7 @@ public class QueryServletTest {
     }
 
     @Test
-    public void testMin() throws SQLException {
+    public void findMinPriceTest() throws SQLException {
         when(servletRequest.getParameter("command"))
                 .thenReturn("min");
         when(productDao.findMinPriceProduct())
@@ -81,7 +81,7 @@ public class QueryServletTest {
     }
 
     @Test
-    public void testSum() throws SQLException {
+    public void getPriceSumTest() throws SQLException {
         when(servletRequest.getParameter("command"))
                 .thenReturn("sum");
         when(productDao.getPricesSum())
@@ -98,7 +98,7 @@ public class QueryServletTest {
     }
 
     @Test
-    public void testCount() throws SQLException {
+    public void getCountTest() throws SQLException {
         when(servletRequest.getParameter("command"))
                 .thenReturn("count");
         when(productDao.getProductsCount())
