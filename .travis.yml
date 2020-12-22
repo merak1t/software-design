@@ -1,5 +1,5 @@
 language: java
-jdk: oraclejdk15
+jdk: oraclejdk11
 install: true
 cache:
   directories:
