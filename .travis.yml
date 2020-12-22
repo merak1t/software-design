@@ -1,14 +1,10 @@
 language: java
+jdk: oraclejdk8
+install: true
+cache:
+  directories:
+    - $HOME/.m2
 
-jdk:
-  - oraclejdk8
-
-sudo: false
-addons:
-  apt:
-    packages:
-      - oracle-java8-installer
-
-
-
-script: mvn clean verify
+script:
+  - ./mvnw clean install
+  - bash <(curl -s https://codecov.io/bash)
