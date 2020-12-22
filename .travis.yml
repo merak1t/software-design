@@ -5,6 +5,7 @@ cache:
   directories:
     - $HOME/.m2
 
-script:
-  - ./mvnw clean install
-  - bash <(curl -s https://codecov.io/bash)
+script: "mvn cobertura:cobertura"
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t 8cef3c5a-6697-4319-aa3d-573401603e2c
